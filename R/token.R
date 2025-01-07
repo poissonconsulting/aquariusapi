@@ -15,25 +15,11 @@
 aq_token <- function(
     username = Sys.getenv("AQ_USERNAME"), 
     password = Sys.getenv("AQ_PASSWORD")) {
+
   chk::chk_string(username)
   chk::chk_string(password)
-  
-#  token <- base_url() |>
-  #  file_path("user/token-auth/") |>
-  #  httr2::request() |> 
-  #  httr2::req_method("POST") |> 
-    # httr2::req_body_json(
-    #   list(email = email,
-    #        password = password)
-    # ) |>
-    # user_agent() |>
-    # httr2::req_perform() |>
-    # httr2::resp_body_json() |>
-    # purrr::pluck("token") |>
-  #  identity()
-  #  
-  
-  response <- base_url() |>
+
+  token <- base_url() |>
     file_path("session") |>
     httr2::request() |>
     httr2::req_method("POST") |> 
@@ -42,15 +28,7 @@ aq_token <- function(
       encryptedPassword = password
     ) |>
     httr2::req_perform() |>
-    print() |>
-    purrr::pluck(4) |>
-    purrr::pluck(15) |>
-    identity()
+    httr2::resp_body_string()
   
-  token <- sub("AQAuthToken=([^;]+);.*", "\\1", response)
-  
-#  invisible(token)
-   token
+   invisible(token)
 }
-
-

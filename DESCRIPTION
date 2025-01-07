@@ -14,8 +14,7 @@ Depends:
     R (>= 4.3)
 Imports: 
     chk,
-    httr2,
-    purrr
+    httr2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
