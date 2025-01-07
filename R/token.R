@@ -34,15 +34,18 @@ aq_token <- function(
   #  
   
   response <- base_url() |>
+    file_path("session") |>
     httr2::request() |>
-    httr2::req_url_path_append("session") |>
+    httr2::req_method("POST") |> 
     httr2::req_body_form(
       username = username,
       encryptedPassword = password
     ) |>
     httr2::req_perform() |>
+    print() |>
     purrr::pluck(4) |>
-    purrr::pluck(15)
+    purrr::pluck(15) |>
+    identity()
   
   token <- sub("AQAuthToken=([^;]+);.*", "\\1", response)
   
