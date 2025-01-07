@@ -6,7 +6,7 @@
 \usage{
 aq_token(
   username = Sys.getenv("AQ_USERNAME"),
-  password = Sys.getenv("BASEROW_PASSWORD")
+  password = Sys.getenv("AQ_PASSWORD")
 )
 }
 \arguments{
