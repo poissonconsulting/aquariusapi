@@ -5,9 +5,21 @@
 \alias{parameters}
 \alias{arguments}
 \alias{args}
-\title{Parameter Descriptions}
+\title{Parameter Descriptions for aquarius2r Package}
 \arguments{
 \item{...}{These dots are for future extensions and must be empty.}
+
+\item{auth_token}{A string of the user's authentication token.}
+
+\item{location_identifiers}{A string of the name of the character vector column of location IDs.}
+
+\item{password}{A string of the user's password.}
+
+\item{time_series_ids}{A string of the name of the character vector column of time series IDs.}
+
+\item{username}{A string of the user name.}
+
+\item{x}{A data frame.}
 }
 \description{
 Default parameter descriptions which may be overridden in individual
