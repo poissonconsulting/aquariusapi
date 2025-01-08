@@ -14,15 +14,24 @@ coverage](https://codecov.io/gh/poissonconsulting/aquariusapi/graph/badge.svg)](
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit)
 <!-- badges: end -->
 
-The goal of aquariusapi is to …
+The `aquariusapi` R package provides an interface to the [Aquarius
+API](https://aquarius-webportal.readthedocs.io/en/latest/apidocs.html).
 
 ## Installation
 
-## Example
+### Release
 
-This is a basic example which shows you how to solve a common problem:
+To install the latest version from
+[GitHub](https://github.com/poissonconsulting/aquariusapi)
 
 ``` r
-library(aquariusapi)
-## basic example code
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/aquariusapi")
 ```
+
+The website is at <https://poissonconsulting.github.io/aquariusapi/>.
+
+## Inspiration
+
+- [aquarius2r](https://github.com/poissonconsulting/aquarius2r/)
+- [baserowapi](https://github.com/poissonconsulting/baserowapi/)
