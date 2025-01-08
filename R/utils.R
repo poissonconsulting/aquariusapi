@@ -5,3 +5,7 @@ base_url <- function() {
 file_path <- function(...) {
   paste(..., sep = "/")
 }
+
+authorization <- function(x, token) {
+  httr2::req_headers(x, Authorization = glue::glue("Bearer {token}"))
+}

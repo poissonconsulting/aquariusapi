@@ -14,6 +14,7 @@ Depends:
     R (>= 4.3)
 Imports: 
     chk,
+    glue,
     dplyr,
     httr2
 Suggests: 

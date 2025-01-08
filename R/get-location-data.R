@@ -18,7 +18,7 @@ aq_get_location_data <- function(location, token = aq_token()) {
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetLocationData") |>
     httr2::req_url_query(!!!list(LocationIdentifier = location)) |>
-    httr2::req_headers(Authorization = paste("Bearer", token)) |>
+    authorization(token) |>
     httr2::req_user_agent("aquariusapi") |>
     httr2::req_perform() |>
     httr2::resp_body_json()
