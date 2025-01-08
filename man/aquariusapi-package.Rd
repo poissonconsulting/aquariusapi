@@ -8,6 +8,13 @@
 \description{
 Provides an interface to the Aquarius API.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://poissonconsulting.github.io/aquariusapi/}
+}
+
+}
 \author{
 \strong{Maintainer}: Joe Thorley \email{joe@pissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
 
