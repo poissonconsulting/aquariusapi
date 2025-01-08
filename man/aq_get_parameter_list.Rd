@@ -17,6 +17,6 @@ A tibble with xx
 }
 \examples{
 \dontrun{
- aq_get_location_data("LC_DRY_WQ06_TEMP")
+ aq_get_parameter_list()
 }
 }

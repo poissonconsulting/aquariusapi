@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_location_data("LC_DRY_WQ06_TEMP")
+#'  aq_get_parameter_list()
 #' }
 aq_get_parameter_list <- function(token = aq_token()) {
   chk::chk_string(token)
@@ -20,7 +20,10 @@ aq_get_parameter_list <- function(token = aq_token()) {
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetParameterList") |>
     httr2::req_headers(Authorization = paste("Bearer", token)) |>
-    httr2::req_user_agent("aquariusapi") |>
+    authorization(token) |>
+    user_agent() |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    httr2::resp_body_json() |>
+    purrr::pluck("Parameters") |>
+    tibblify::tibblify()
 }

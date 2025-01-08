@@ -16,6 +16,7 @@ Imports:
     chk,
     glue,
     httr2,
+    purrr,
     tibblify
 Suggests: 
     testthat (>= 3.0.0)
