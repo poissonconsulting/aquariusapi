@@ -2,4 +2,5 @@
 
 export(aq_get_auth_token)
 export(aq_get_location_data)
+export(aq_get_parameter_list)
 export(aq_token)
