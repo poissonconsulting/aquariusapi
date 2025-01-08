@@ -11,6 +11,7 @@
 #' @param token A string of the user's authentication token.
 #' @param location A string of the location name.
 #' @param password A string of the user's password.
+#' @param time_series_id A string of time series ID.
 #' @param username A string of the user name.
 #' @return A tibble.
 #' @keywords internal

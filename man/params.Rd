@@ -15,6 +15,8 @@
 
 \item{password}{A string of the user's password.}
 
+\item{time_series_id}{A string of time series ID.}
+
 \item{username}{A string of the user name.}
 }
 \value{

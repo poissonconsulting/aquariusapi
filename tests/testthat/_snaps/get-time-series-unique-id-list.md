@@ -1,17 +1,18 @@
-# aq_get_time_series_unique_id_list works
+# aq_get_time_series_raw_data works
 
-    # A tibble: 2,196 x 1
-       UniqueId                        
-       <chr>                           
-     1 27a6b0badd044e0c9b29d589b9e078d9
-     2 11e69f80f4d6474e8f9c07b10b2b83d7
-     3 5b70e83675d4466cb50f7358098435f0
-     4 0bb7d22d5a6b4f618cb3827cb39044fb
-     5 1e8d5087f68443a995ee4b7df95f0642
-     6 6f92f06ee42843ddb1dfc36c906e62aa
-     7 34d35091c6b44026b66f53f7958773bc
-     8 e7f55a9ee10d4c588650734ba1c3a493
-     9 e8e3ca35914843debccceb626c575bb4
-    10 f91f724691f641b5916eac960b5b4782
-    # i 2,186 more rows
+    # A tibble: 88,747 x 9
+       UniqueId Parameter Label LocationIdentifier Unit  StartTime EndTime Timestamp
+       <chr>    <chr>     <chr> <chr>              <chr> <chr>     <chr>   <chr>    
+     1 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     2 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     3 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     4 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     5 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     6 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     7 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     8 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+     9 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+    10 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+    # i 88,737 more rows
+    # i 1 more variable: Value <tibble[,1]>
 
