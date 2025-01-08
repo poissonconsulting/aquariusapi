@@ -1,4 +1,4 @@
-#' Get Tables for Aquarius Database
+#' Get Location Data
 #'
 #' @inheritParams params
 #'

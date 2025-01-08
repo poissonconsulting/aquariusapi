@@ -2,7 +2,7 @@
 % Please edit documentation in R/get-parameter-list.R
 \name{aq_get_parameter_list}
 \alias{aq_get_parameter_list}
-\title{Get Tables for Aquarius Database}
+\title{Get Parameter List}
 \usage{
 aq_get_parameter_list(token = aq_token())
 }

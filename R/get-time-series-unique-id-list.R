@@ -1,4 +1,4 @@
-#' Get Unit List
+#' Get Time Series Unique ID List
 #'
 #' @inheritParams params
 #'
@@ -6,20 +6,20 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_unit_list()
+#'  aq_get_time_series_unique_id_list()
 #' }
-aq_get_unit_list <- function(token = aq_token()) {
+aq_get_time_series_unique_id_list <- function(token = aq_token()) {
   chk::chk_string(token)
   
   base_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
-    httr2::req_url_path_append("GetUnitList") |>
+    httr2::req_url_path_append("GetTimeSeriesUniqueIdList") |>
     authorization(token) |>
     user_agent() |>
     httr2::req_perform() |>
     httr2::resp_body_json() |>
-    purrr::pluck("Units") |>
+    purrr::pluck("TimeSeriesUniqueIds") |>
     tibblify::tibblify() |>
     identity()
 }

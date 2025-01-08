@@ -2,7 +2,7 @@
 % Please edit documentation in R/get-location-data.R
 \name{aq_get_location_data}
 \alias{aq_get_location_data}
-\title{Get Tables for Aquarius Database}
+\title{Get Location Data}
 \usage{
 aq_get_location_data(location, token = aq_token())
 }
@@ -12,7 +12,7 @@ aq_get_location_data(location, token = aq_token())
 \item{token}{A string of the user's authentication token.}
 }
 \description{
-Get Tables for Aquarius Database
+Get Location Data
 }
 \examples{
 \dontrun{

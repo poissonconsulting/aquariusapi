@@ -2,7 +2,7 @@
 % Please edit documentation in R/get-unit-list.R
 \name{aq_get_unit_list}
 \alias{aq_get_unit_list}
-\title{Get Tables for Aquarius Database}
+\title{Get Unit List}
 \usage{
 aq_get_unit_list(token = aq_token())
 }
@@ -10,7 +10,7 @@ aq_get_unit_list(token = aq_token())
 \item{token}{A string of the user's authentication token.}
 }
 \description{
-Get Tables for Aquarius Database
+Get Unit List
 }
 \examples{
 \dontrun{
