@@ -29,6 +29,7 @@ aq_get_auth_token <- function(
       Username = username,
       EncryptedPassword = password
     ) |>
+    user_agent() |>
     httr2::req_perform() |>
     httr2::resp_body_string()
   
