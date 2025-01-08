@@ -11,9 +11,6 @@ aq_get_location_data(location, token = aq_token())
 
 \item{token}{A string of the user's authentication token.}
 }
-\value{
-A tibble with xx
-}
 \description{
 Get Tables for Aquarius Database
 }

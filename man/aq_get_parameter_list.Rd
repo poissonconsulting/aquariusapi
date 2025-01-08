@@ -9,9 +9,6 @@ aq_get_parameter_list(token = aq_token())
 \arguments{
 \item{token}{A string of the user's authentication token.}
 }
-\value{
-A tibble with xx
-}
 \description{
 \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=ParameterListServiceRequest}
 }

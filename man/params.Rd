@@ -17,6 +17,9 @@
 
 \item{username}{A string of the user name.}
 }
+\value{
+A tibble.
+}
 \description{
 Default parameter descriptions which may be overridden in individual
 functions.

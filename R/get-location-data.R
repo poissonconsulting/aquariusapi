@@ -2,7 +2,6 @@
 #'
 #' @inheritParams params
 #'
-#' @return A tibble with xx
 #' @export
 #'
 #' @examples

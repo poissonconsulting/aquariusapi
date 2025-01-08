@@ -1,4 +1,4 @@
-# tables works
+# aq_get_location_data works
 
     # A tibble: 1 x 14
       Identifier    LocationName LocationType Latitude Longitude UtcOffset Elevation

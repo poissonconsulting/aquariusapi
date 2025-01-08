@@ -12,7 +12,7 @@
 #' @param location A string of the location name.
 #' @param password A string of the user's password.
 #' @param username A string of the user name.
-
+#' @return A tibble.
 #' @keywords internal
 #' @aliases parameters arguments args
 #' @usage NULL
