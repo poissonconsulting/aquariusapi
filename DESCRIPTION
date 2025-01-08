@@ -15,8 +15,8 @@ Depends:
 Imports: 
     chk,
     glue,
-    dplyr,
-    httr2
+    httr2,
+    tibblify
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

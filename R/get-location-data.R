@@ -13,7 +13,18 @@ aq_get_location_data <- function(location, token = aq_token()) {
   chk::chk_string(location)
   chk::chk_string(token)
   
-  response <- base_url() |>
+  spec <- tibblify::tspec_row(
+    UniqueId = tib_chr("UniqueId"),
+    LocationType = tib_chr("LocationType"),
+    Latitude = tib_dbl("Latitude"),
+    Longitude = tib_dbl("Longitude"),
+    UtcOffset = tib_int("UtcOffset"),
+    Elevation = tib_dbl("Elevation"),
+    ElevationUnits = tib_chr("ElevationUnits"),
+    Description = tib_chr("Description")
+  )
+
+ base_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetLocationData") |>
@@ -21,16 +32,6 @@ aq_get_location_data <- function(location, token = aq_token()) {
     authorization(token) |>
     user_agent() |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
-  
-  dplyr::tibble(
-    location_unique_id = response$UniqueId,
-    location_type = response$LocationType,
-    latitude = response$Latitude,
-    longitude = response$Longitude,
-    utc_offset = response$UtcOffset,
-    elevation = response$Elevation,
-    elevation_units = response$ElevationUnits,
-    location_description = response$Description
-  ) 
+    httr2::resp_body_json() |>
+    tibblify::tibblify(spec)
 }
