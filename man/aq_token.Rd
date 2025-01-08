@@ -5,8 +5,8 @@
 \title{Get Aquarius Token}
 \usage{
 aq_token(
-  username = Sys.getenv("AQ_USERNAME"),
-  password = Sys.getenv("AQ_PASSWORD")
+  username = getOption("aq.username", Sys.getenv("AQ_USERNAME")),
+  password = getOption("aq.password", Sys.getenv("AQ_PASSWORD"))
 )
 }
 \arguments{

@@ -6,6 +6,9 @@
 \usage{
 aq_tables(token = aq_token())
 }
+\arguments{
+\item{token}{A string of the user's authentication token.}
+}
 \value{
 A tibble with xx
 }

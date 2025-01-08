@@ -13,8 +13,8 @@
 #'   aq_token()
 #' }
 aq_token <- function(
-    username = Sys.getenv("AQ_USERNAME"), 
-    password = Sys.getenv("AQ_PASSWORD")) {
+    username = getOption("aq.username", Sys.getenv("AQ_USERNAME")), 
+    password = getOption("aq.password", Sys.getenv("AQ_PASSWORD"))) {
 
   chk::chk_string(username)
   chk::chk_string(password)

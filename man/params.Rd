@@ -9,7 +9,7 @@
 \arguments{
 \item{...}{These dots are for future extensions and must be empty.}
 
-\item{auth_token}{A string of the user's authentication token.}
+\item{token}{A string of the user's authentication token.}
 
 \item{location_identifiers}{A string of the name of the character vector column of location IDs.}
 
