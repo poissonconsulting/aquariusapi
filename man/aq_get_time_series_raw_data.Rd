@@ -4,12 +4,18 @@
 \alias{aq_get_time_series_raw_data}
 \title{Get Location Data}
 \usage{
-aq_get_time_series_raw_data(time_series_id, token = aq_token())
+aq_get_time_series_raw_data(
+  time_series_id,
+  token = aq_token(),
+  domain = aq_domain()
+)
 }
 \arguments{
 \item{time_series_id}{A string of time series ID.}
 
 \item{token}{A string of the user's authentication token.}
+
+\item{domain}{A string of the domain name.}
 }
 \description{
 \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetTimeSeriesRawData}

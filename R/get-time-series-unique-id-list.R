@@ -10,10 +10,14 @@
 #' \dontrun{
 #'  aq_get_time_series_unique_id_list()
 #' }
-aq_get_time_series_unique_id_list <- function(token = aq_token()) {
+aq_get_time_series_unique_id_list <- function(
+    token = aq_token(),
+    domain = aq_domain()) {
   chk::chk_string(token)
+  chk::chk_string(domain)
   
-  base_url() |>
+  domain |>
+    base_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetTimeSeriesUniqueIdList") |>

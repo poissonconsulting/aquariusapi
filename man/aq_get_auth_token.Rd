@@ -7,7 +7,8 @@
 \usage{
 aq_get_auth_token(
   username = getOption("aq.username", Sys.getenv("AQ_USERNAME")),
-  password = getOption("aq.password", Sys.getenv("AQ_PASSWORD"))
+  password = getOption("aq.password", Sys.getenv("AQ_PASSWORD")),
+  domain = aq_domain()
 )
 
 aq_token(
@@ -19,6 +20,8 @@ aq_token(
 \item{username}{A string of the user name.}
 
 \item{password}{A string of the user's password.}
+
+\item{domain}{A string of the domain name.}
 }
 \value{
 A character string of the temporary authorization token

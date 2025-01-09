@@ -10,9 +10,13 @@
 #' \dontrun{
 #'  aq_get_location_data("LC_DRY_WQ06_TEMP")
 #' }
-aq_get_location_data <- function(location, token = aq_token()) {
+aq_get_location_data <- function(
+    location, 
+    token = aq_token(),
+    domain = aq_domain()) {
   chk::chk_string(location)
   chk::chk_string(token)
+  chk::chk_string(domain)
   
   spec <- tibblify::tspec_row(
     Identifier = tib_chr("Identifier"),
@@ -31,7 +35,8 @@ aq_get_location_data <- function(location, token = aq_token()) {
     Tags = tibblify::tib_variant("Tags")
   )
   
-  base_url() |>
+  domain |>
+    base_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetLocationData") |>

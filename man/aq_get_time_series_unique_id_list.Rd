@@ -4,10 +4,12 @@
 \alias{aq_get_time_series_unique_id_list}
 \title{Get Time Series Unique ID List}
 \usage{
-aq_get_time_series_unique_id_list(token = aq_token())
+aq_get_time_series_unique_id_list(token = aq_token(), domain = aq_domain())
 }
 \arguments{
 \item{token}{A string of the user's authentication token.}
+
+\item{domain}{A string of the domain name.}
 }
 \description{
 \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=TimeSeriesUniqueIdListServiceRequest}

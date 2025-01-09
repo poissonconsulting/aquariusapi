@@ -10,7 +10,10 @@
 #' \dontrun{
 #'  aq_get_time_series_raw_data("27a6b0badd044e0c9b29d589b9e078d9")
 #' }
-aq_get_time_series_raw_data <- function(time_series_id, token = aq_token()) {
+aq_get_time_series_raw_data <- function(
+    time_series_id, 
+    token = aq_token(),
+    domain = aq_domain()) {
   chk::chk_string(time_series_id)
   chk::chk_string(token)
   
@@ -24,7 +27,8 @@ aq_get_time_series_raw_data <- function(time_series_id, token = aq_token()) {
     Points = tibblify::tib_variant("Points")
   )
   
-  response <- base_url() |>
+  response <- domain |>
+    base_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetTimeSeriesRawData") |>
