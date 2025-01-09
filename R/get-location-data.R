@@ -11,10 +11,10 @@
 #'  aq_get_location_data("LC_DRY_WQ06_TEMP")
 #' }
 aq_get_location_data <- function(
-    location, 
+    location_id, 
     token = aq_token(),
     domain = aq_domain()) {
-  chk::chk_string(location)
+  chk::chk_string(location_id)
   chk::chk_string(token)
   chk::chk_string(domain)
   
@@ -40,7 +40,7 @@ aq_get_location_data <- function(
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetLocationData") |>
-    httr2::req_url_query(!!!list(LocationIdentifier = location)) |>
+    httr2::req_url_query(!!!list(LocationIdentifier = location_id)) |>
     authorization(token) |>
     user_agent() |>
     httr2::req_perform() |>

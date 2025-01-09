@@ -10,7 +10,7 @@
 #' @inheritParams rlang::args_dots_empty
 #' @param domain A string of the domain name.
 #' @param token A string of the user's authentication token.
-#' @param location A string of the location name.
+#' @param location_id A string of the location identifier
 #' @param password A string of the user's password.
 #' @param time_series_id A string of time series ID.
 #' @param username A string of the user name.

@@ -13,7 +13,7 @@
 
 \item{token}{A string of the user's authentication token.}
 
-\item{location}{A string of the location name.}
+\item{location_id}{A string of the location identifier}
 
 \item{password}{A string of the user's password.}
 
