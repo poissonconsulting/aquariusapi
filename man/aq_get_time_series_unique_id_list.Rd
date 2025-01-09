@@ -22,7 +22,7 @@ Get Time Series Unique ID List
 }
 \examples{
 \dontrun{
- aq_get_time_series_unique_id_list()
+aq_get_time_series_unique_id_list()
 }
 }
 \seealso{

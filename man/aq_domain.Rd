@@ -13,5 +13,5 @@ aq_domain(domain = getOption("aq.domain", Sys.getenv("AQ_DOMAIN")))
 Domain
 }
 \examples{
- aq_domain()
+aq_domain()
 }

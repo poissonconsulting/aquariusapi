@@ -25,7 +25,7 @@ Get Location Notes
 }
 \examples{
 \dontrun{
- aq_get_location_notes("LC_DRY_WQ06_TEMP")
+aq_get_location_notes("LC_DRY_WQ06_TEMP")
 }
 }
 \seealso{

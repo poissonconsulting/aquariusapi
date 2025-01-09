@@ -17,5 +17,5 @@ aq_documentation(path_append, ..., domain = aq_domain())
 Documentation
 }
 \examples{
- aq_documentation("GetAuthTokenServiceRequest")
+aq_documentation("GetAuthTokenServiceRequest")
 }

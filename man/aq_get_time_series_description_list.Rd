@@ -22,7 +22,7 @@ Get Time Series Description List
 }
 \examples{
 \dontrun{
- aq_get_time_series_description_list()
+aq_get_time_series_description_list()
 }
 }
 \seealso{

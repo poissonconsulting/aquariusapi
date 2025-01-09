@@ -8,10 +8,10 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_location_data("LC_DRY_WQ06_TEMP")
+#' aq_get_location_data("LC_DRY_WQ06_TEMP")
 #' }
 aq_get_location_data <- function(
-    location_id, 
+    location_id,
     ...,
     token = aq_token(),
     domain = aq_domain()) {
@@ -19,7 +19,7 @@ aq_get_location_data <- function(
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-  
+
   spec <- tibblify::tspec_row(
     Identifier = tib_chr("Identifier"),
     LocationName = tib_chr("LocationName"),
@@ -36,9 +36,9 @@ aq_get_location_data <- function(
     LocationDatum = tibblify::tib_variant("LocationDatum"),
     Tags = tibblify::tib_variant("Tags")
   )
-  
+
   query <- list(LocationIdentifier = location_id)
-  
+
   domain |>
     request("GetLocationData", token, query = query) |>
     tibblify::tibblify(spec)

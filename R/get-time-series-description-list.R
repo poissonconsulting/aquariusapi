@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_time_series_description_list()
+#' aq_get_time_series_description_list()
 #' }
 aq_get_time_series_description_list <- function(
     ...,
@@ -17,12 +17,12 @@ aq_get_time_series_description_list <- function(
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-  
+
   response <- domain |>
     request("GetTimeSeriesDescriptionList", token) |>
     purrr::pluck("TimeSeriesDescriptions") |>
     tibblify::tibblify() |>
     identity()
-  
+
   response
 }

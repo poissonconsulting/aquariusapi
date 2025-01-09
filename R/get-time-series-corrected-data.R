@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_time_series_corrected("27a6b0badd044e0c9b29d589b9e078d9")
+#' aq_get_time_series_corrected("27a6b0badd044e0c9b29d589b9e078d9")
 #' }
 aq_get_time_series_corrected_data <- function(
     time_series_id,
@@ -19,7 +19,7 @@ aq_get_time_series_corrected_data <- function(
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-  
+
   spec <- tibblify::tspec_row(
     UniqueId = tib_chr("UniqueId"),
     Parameter = tib_chr("Parameter"),
@@ -29,20 +29,20 @@ aq_get_time_series_corrected_data <- function(
     TimeRange = tibblify::tib_variant("TimeRange"),
     Points = tibblify::tib_variant("Points")
   )
-  
+
   query <- list(TimeSeriesUniqueId = time_series_id)
-  
+
   response <- domain |>
     request("GetTimeSeriesCorrectedData", token, query = query) |>
     tibblify::tibblify(spec)
-  
+
   points <- response$Points |>
     purrr::pluck(1) |>
     tibblify::tibblify()
-  
+
   time_range <- response$TimeRange |>
     tibblify::tibblify()
-  
+
   response |>
     dplyr::select(!c("Points", "TimeRange")) |>
     dplyr::bind_cols(time_range) |>

@@ -1,5 +1,5 @@
 #' Get Parameter List
-#' 
+#'
 #' @seealso \url{`r aq_documentation("ParameterListServiceRequest")`}
 #'
 #' @inheritParams params
@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_parameter_list()
+#' aq_get_parameter_list()
 #' }
 aq_get_parameter_list <- function(
     ...,
@@ -17,7 +17,7 @@ aq_get_parameter_list <- function(
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-  
+
   response <- domain |>
     request("GetParameterList", token) |>
     purrr::pluck("Parameters") |>

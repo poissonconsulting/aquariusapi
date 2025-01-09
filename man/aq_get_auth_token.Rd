@@ -40,7 +40,7 @@ username and password.
 }}
 \examples{
 \dontrun{
-  aq_get_auth_token()
+aq_get_auth_token()
 }
 }
 \seealso{

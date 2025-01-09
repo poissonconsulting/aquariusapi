@@ -1,5 +1,5 @@
 #' Get Unit List
-#' 
+#'
 #' @seealso \url{`r aq_documentation("UnitListServiceRequest")`}
 #'
 #' @inheritParams params
@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_unit_list()
+#' aq_get_unit_list()
 #' }
 aq_get_unit_list <- function(
     ...,
@@ -17,7 +17,7 @@ aq_get_unit_list <- function(
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-  
+
   domain |>
     request("GetUnitList", token) |>
     purrr::pluck("Units") |>

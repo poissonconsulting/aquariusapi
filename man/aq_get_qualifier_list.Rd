@@ -18,7 +18,7 @@ Get Parameter List
 }
 \examples{
 \dontrun{
- aq_get_qualifier_list()
+aq_get_qualifier_list()
 }
 }
 \seealso{
