@@ -44,6 +44,7 @@ username and password.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">aq_get_auth_token</span><span class="op">(</span></span>
 <span>  username <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"aq.username"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"AQ_USERNAME"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  password <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"aq.password"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"AQ_PASSWORD"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  <span class="va">...</span>,</span>
 <span>  domain <span class="op">=</span> <span class="fu"><a href="aq_domain.html">aq_domain</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -63,6 +64,10 @@ username and password.</p>
 
 <dt id="arg-password">password<a class="anchor" aria-label="anchor" href="#arg-password"></a></dt>
 <dd><p>A string of the user's password.</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>These dots are for future extensions and must be empty.</p></dd>
 
 
 <dt id="arg-domain">domain<a class="anchor" aria-label="anchor" href="#arg-domain"></a></dt>
