@@ -1,6 +1,6 @@
 #' Get Location Data
 #'
-#' \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=LocationDataServiceRequest}
+#' @seealso \url{`r aq_documentation("LocationDataServiceRequest")`}
 #'
 #' @inheritParams params
 #'

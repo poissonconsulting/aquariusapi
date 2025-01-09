@@ -14,10 +14,13 @@ aq_get_location_data(location_id, token = aq_token(), domain = aq_domain())
 \item{domain}{A string of the domain name.}
 }
 \description{
-\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=LocationDataServiceRequest}
+Get Location Data
 }
 \examples{
 \dontrun{
  aq_get_location_data("LC_DRY_WQ06_TEMP")
 }
+}
+\seealso{
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=LocationDataServiceRequest}
 }

@@ -30,9 +30,6 @@ A character string of the temporary authorization token
 Generates an temporary authorization token from the Aquarius API for a supplied
 username and password.
 }
-\details{
-\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetAuthTokenServiceRequest}
-}
 \section{Functions}{
 \itemize{
 \item \code{aq_token()}: Get Temporary Authorization Token
@@ -42,4 +39,7 @@ username and password.
 \dontrun{
   aq_get_auth_token()
 }
+}
+\seealso{
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetAuthTokenServiceRequest}
 }

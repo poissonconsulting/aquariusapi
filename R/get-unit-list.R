@@ -1,6 +1,6 @@
 #' Get Unit List
 #' 
-#' \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=UnitListServiceRequest}
+#' @seealso \url{`r aq_documentation("UnitListServiceRequest")`}
 #'
 #' @inheritParams params
 #'

@@ -18,10 +18,13 @@ aq_get_time_series_raw_data(
 \item{domain}{A string of the domain name.}
 }
 \description{
-\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetTimeSeriesRawData}
+Get Location Data
 }
 \examples{
 \dontrun{
  aq_get_time_series_raw_data("27a6b0badd044e0c9b29d589b9e078d9")
 }
+}
+\seealso{
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetTimeSeriesRawData}
 }

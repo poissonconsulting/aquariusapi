@@ -12,10 +12,13 @@ aq_get_unit_list(token = aq_token(), domain = aq_domain())
 \item{domain}{A string of the domain name.}
 }
 \description{
-\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=UnitListServiceRequest}
+Get Unit List
 }
 \examples{
 \dontrun{
  aq_get_unit_list()
 }
+}
+\seealso{
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=UnitListServiceRequest}
 }

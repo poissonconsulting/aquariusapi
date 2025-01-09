@@ -12,10 +12,13 @@ aq_get_time_series_unique_id_list(token = aq_token(), domain = aq_domain())
 \item{domain}{A string of the domain name.}
 }
 \description{
-\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=TimeSeriesUniqueIdListServiceRequest}
+Get Time Series Unique ID List
 }
 \examples{
 \dontrun{
  aq_get_time_series_unique_id_list()
 }
+}
+\seealso{
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=TimeSeriesUniqueIdListServiceRequest}
 }

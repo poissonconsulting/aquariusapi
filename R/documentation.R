@@ -1,6 +1,5 @@
 #' Documentation
 #' 
-#'
 #' @inheritParams params
 #'
 #' @export
