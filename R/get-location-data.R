@@ -1,5 +1,7 @@
 #' Get Location Data
 #'
+#' \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=LocationDataServiceRequest}
+#'
 #' @inheritParams params
 #'
 #' @export

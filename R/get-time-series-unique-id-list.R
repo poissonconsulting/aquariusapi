@@ -1,5 +1,7 @@
 #' Get Time Series Unique ID List
 #'
+#' \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=TimeSeriesUniqueIdListServiceRequest}
+#' 
 #' @inheritParams params
 #'
 #' @export

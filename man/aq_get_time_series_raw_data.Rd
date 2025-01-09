@@ -12,7 +12,7 @@ aq_get_time_series_raw_data(time_series_id, token = aq_token())
 \item{token}{A string of the user's authentication token.}
 }
 \description{
-Get Location Data
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetTimeSeriesRawData}
 }
 \examples{
 \dontrun{

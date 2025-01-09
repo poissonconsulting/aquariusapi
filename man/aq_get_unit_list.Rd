@@ -10,7 +10,7 @@ aq_get_unit_list(token = aq_token())
 \item{token}{A string of the user's authentication token.}
 }
 \description{
-Get Unit List
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=UnitListServiceRequest}
 }
 \examples{
 \dontrun{

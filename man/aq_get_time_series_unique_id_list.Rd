@@ -10,7 +10,7 @@ aq_get_time_series_unique_id_list(token = aq_token())
 \item{token}{A string of the user's authentication token.}
 }
 \description{
-Get Time Series Unique ID List
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=TimeSeriesUniqueIdListServiceRequest}
 }
 \examples{
 \dontrun{

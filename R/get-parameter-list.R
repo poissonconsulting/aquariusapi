@@ -1,6 +1,5 @@
 #' Get Parameter List
 #' 
-#' 
 #' \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=ParameterListServiceRequest}
 #'
 #' @inheritParams params
