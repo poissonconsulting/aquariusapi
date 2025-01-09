@@ -13,6 +13,7 @@
 #' @param location_id A string of the location identifier
 #' @param password A string of the user's password.
 #' @param time_series_id A string of time series ID.
+#' @param time_series_ids A character vector of the time series ID.
 #' @param username A string of the user name.
 #' @param path_append A string to append to the URL path.
 #' @return A tibble.
