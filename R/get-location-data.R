@@ -15,7 +15,6 @@ aq_get_location_data <- function(
     ...,
     token = aq_token(),
     domain = aq_domain()) {
-
   chk::chk_string(location_id)
   chk::chk_unused(...)
   chk::chk_string(token)
@@ -43,6 +42,6 @@ aq_get_location_data <- function(
   response <- domain |>
     request("GetLocationData", token, query = query) |>
     tibblify::tibblify(spec)
-  
+
   response
 }

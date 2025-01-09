@@ -22,6 +22,6 @@ aq_get_parameter_list <- function(
     request("GetParameterList", token) |>
     purrr::pluck("Parameters") |>
     tibblify::tibblify()
-  
+
   response
 }
