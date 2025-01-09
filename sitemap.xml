@@ -13,6 +13,7 @@
 <url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_auth_token.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_location_data.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_parameter_list.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_time_series_data_corrected.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_time_series_data_raw.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_time_series_description_list_by_unique_id.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/aquariusapi/reference/aq_get_time_series_unique_id_list.html</loc></url>
