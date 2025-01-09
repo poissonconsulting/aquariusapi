@@ -19,9 +19,20 @@ aq_get_parameter_list <- function(
   chk::chk_string(domain)
 
   response <- domain |>
-    request("GetParameterList", token) |>
+    request("GetParameterList", token)
+  
+  spec <- tibblify::tspec_df(
+    tib_chr("Identifier"),
+    tib_chr("UnitGroupIdentifier"),
+    tib_chr("UnitIdentifier"),
+    tib_chr("DisplayName"),
+    tib_chr("InterpolationType"),
+    tib_chr("RoundingSpec", required = FALSE),
+  )
+  
+  response <- response |>
     purrr::pluck("Parameters") |>
-    tibblify::tibblify()
+    tibblify::tibblify(spec)
 
   response
 }

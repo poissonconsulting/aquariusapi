@@ -19,28 +19,28 @@ aq_get_location_data <- function(
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-
+  
   query <- list(LocationIdentifier = location_id)
-
+  
   response <- domain |>
     request("GetLocationData", token, query = query)
-
+  
   spec <- tibblify::tspec_row(
-    LocationName = tib_chr("LocationName"),
-    Description = tib_chr("Description"),
-    Identifier = tib_chr("Identifier"),
-    UniqueId = tib_chr("UniqueId"),
-    LocationType = tib_chr("LocationType"),
-    Latitude = tib_dbl("Latitude"),
-    Longitude = tib_dbl("Longitude"),
-    Srid = tib_int("Srid"),
-    ElevationUnits = tib_chr("ElevationUnits"),
-    Elevation = tib_dbl("Elevation"),
-    UtcOffset = tib_int("UtcOffset")
+    tib_chr("LocationName"),
+    tib_chr("Description"),
+    tib_chr("Identifier"),
+    tib_chr("UniqueId"),
+    tib_chr("LocationType"),
+    tib_dbl("Latitude"),
+    tib_dbl("Longitude"),
+    tib_int("Srid"),
+    tib_chr("ElevationUnits"),
+    tib_dbl("Elevation"),
+    tib_int("UtcOffset")
   )
   
   response <- response |>
     tibblify::tibblify(spec)
-
+  
   response
 }

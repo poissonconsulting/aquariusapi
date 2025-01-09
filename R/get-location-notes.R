@@ -26,9 +26,9 @@ aq_get_location_notes <- function(
     request("GetLocationNotes", token, query = query)
   
   spec <- tibblify::tspec_row(
-    LocationName = tib_chr("LocationName"),
-    LocationIdentifier = tib_chr("LocationIdentifier"),
-    LocationUniqueId = tib_chr("LocationUniqueId")
+    tib_chr("LocationName"),
+    tib_chr("LocationIdentifier"),
+    tib_chr("LocationUniqueId")
   )
   
   response <- response |>
