@@ -6,12 +6,13 @@ user_agent <- function(x) {
   httr2::req_user_agent(x, "aquariusapi (https://github.com/poissonconsulting/aquariusapi)")
 }
 
-request <- function(domain, path_append, token) {
+request <- function(domain, path_append, token, query = NULL) {
   domain |>
     aq_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append(path_append) |>
+    httr2::req_url_query(!!!query) |>
     authorization(token) |>
     user_agent() |>
     httr2::req_perform() |>
