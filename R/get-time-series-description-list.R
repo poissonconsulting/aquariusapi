@@ -19,7 +19,9 @@ aq_get_time_series_description_list <- function(
   chk::chk_string(domain)
 
   response <- domain |>
-    request("GetTimeSeriesDescriptionList", token) |>
+    request("GetTimeSeriesDescriptionList", token) 
+  
+  response <- response |>
     purrr::pluck("TimeSeriesDescriptions") |>
     tibblify::tibblify() |>
     identity()

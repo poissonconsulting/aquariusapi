@@ -1,6 +1,6 @@
 #' Get Time Series Description
 #'
-#' @seealso \url{`r aq_documentation("GetTimeSeriesDescriptionListByUniqueId")`}
+#' @seealso \url{`r aq_documentation("TimeSeriesDescriptionListByUniqueIdServiceRequest")`}
 #'
 #' @inheritParams params
 #'
@@ -24,9 +24,12 @@ aq_get_time_series_description_list_by_unique_id <- function(
   query <- list(TimeSeriesUniqueIds = time_series_ids)
 
   response <- domain |>
-    request("GetTimeSeriesDescriptionListByUniqueId", token, query = query) |>
+    request("GetTimeSeriesDescriptionListByUniqueId", token, query = query)
+  
+  response <- response |>
     purrr::pluck("TimeSeriesDescriptions") |>
-    tibblify::tibblify()
+    tibblify::tibblify() |>
+    identity()
 
   response
 }

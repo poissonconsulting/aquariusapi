@@ -20,6 +20,11 @@ aq_get_time_series_raw_data <- function(
   chk::chk_string(token)
   chk::chk_string(domain)
 
+  query <- list(TimeSeriesUniqueId = time_series_id)
+
+  response <- domain |>
+    request("GetTimeSeriesRawData", token, query = query) 
+  
   spec <- tibblify::tspec_row(
     UniqueId = tib_chr("UniqueId"),
     Parameter = tib_chr("Parameter"),
@@ -29,11 +34,8 @@ aq_get_time_series_raw_data <- function(
     TimeRange = tibblify::tib_variant("TimeRange"),
     Points = tibblify::tib_variant("Points")
   )
-
-  query <- list(TimeSeriesUniqueId = time_series_id)
-
-  response <- domain |>
-    request("GetTimeSeriesRawData", token, query = query) |>
+  
+  response <- response |>
     tibblify::tibblify(spec)
 
   points <- response$Points |>
@@ -43,9 +45,11 @@ aq_get_time_series_raw_data <- function(
   time_range <- response$TimeRange |>
     tibblify::tibblify()
 
-  response |>
+  response <- response |>
     dplyr::select(!c("Points", "TimeRange")) |>
     dplyr::bind_cols(time_range) |>
     dplyr::cross_join(points) |>
     identity()
+
+  response
 }

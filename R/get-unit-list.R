@@ -18,9 +18,13 @@ aq_get_unit_list <- function(
   chk::chk_string(token)
   chk::chk_string(domain)
 
-  domain |>
-    request("GetUnitList", token) |>
+  response <- domain |>
+    request("GetUnitList", token)
+  
+  response <- response |>
     purrr::pluck("Units") |>
     tibblify::tibblify() |>
     identity()
+  
+  response
 }

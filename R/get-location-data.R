@@ -20,6 +20,11 @@ aq_get_location_data <- function(
   chk::chk_string(token)
   chk::chk_string(domain)
 
+  query <- list(LocationIdentifier = location_id)
+
+  response <- domain |>
+    request("GetLocationData", token, query = query)
+
   spec <- tibblify::tspec_row(
     Identifier = tib_chr("Identifier"),
     LocationName = tib_chr("LocationName"),
@@ -36,11 +41,8 @@ aq_get_location_data <- function(
     LocationDatum = tibblify::tib_variant("LocationDatum"),
     Tags = tibblify::tib_variant("Tags")
   )
-
-  query <- list(LocationIdentifier = location_id)
-
-  response <- domain |>
-    request("GetLocationData", token, query = query) |>
+  
+  response <- response |>
     tibblify::tibblify(spec)
 
   response

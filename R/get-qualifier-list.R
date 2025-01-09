@@ -19,7 +19,9 @@ aq_get_qualifier_list <- function(
   chk::chk_string(domain)
 
   response <- domain |>
-    request("GetQualifierList", token) |>
+    request("GetQualifierList", token) 
+  
+  response <- response |>
     purrr::pluck("Qualifiers") |>
     tibblify::tibblify()
 

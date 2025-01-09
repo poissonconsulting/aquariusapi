@@ -18,9 +18,13 @@ aq_get_time_series_unique_id_list <- function(
   chk::chk_string(token)
   chk::chk_string(domain)
 
-  domain |>
-    request("GetTimeSeriesUniqueIdList", token) |>
+  response <- domain |>
+    request("GetTimeSeriesUniqueIdList", token) 
+  
+  response <- response |>
     purrr::pluck("TimeSeriesUniqueIds") |>
     tibblify::tibblify() |>
     identity()
+  
+  response
 }
