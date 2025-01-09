@@ -28,21 +28,11 @@ aq_get_location_notes <- function(
   spec <- tibblify::tspec_row(
     LocationName = tib_chr("LocationName"),
     LocationIdentifier = tib_chr("LocationIdentifier"),
-    LocationUniqueId = tib_chr("LocationUniqueId"),
-    LocationNotes = tibblify::tib_variant("LocationNotes")
+    LocationUniqueId = tib_chr("LocationUniqueId")
   )
   
   response <- response |>
-    tibblify::tibblify(spec) |>
-    identity()
-
-  location_notes <- response$LocationNotes |>
-    tibblify::tibblify()
-
-  response <- response |>
-    dplyr::select(!"LocationNotes") |>
-    dplyr::bind_cols(location_notes) |>
-    identity()
+    tibblify::tibblify(spec) 
 
   response
 }
