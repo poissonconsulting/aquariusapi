@@ -6,7 +6,7 @@
 \alias{aquariusapi-package}
 \title{aquariusapi: An API to Aquarius Databases}
 \description{
-Provides an interface to the Aquarius API.
+Provides an low-level interface to the Aquarius API.
 }
 \seealso{
 Useful links:
