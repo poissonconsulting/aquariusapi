@@ -37,16 +37,10 @@ aq_get_location_data <- function(
     Tags = tibblify::tib_variant("Tags")
   )
   
-  domain |>
-    aq_url() |>
-    httr2::request() |>
-    httr2::req_method("GET") |>
-    httr2::req_url_path_append("GetLocationData") |>
-    httr2::req_url_query(!!!list(LocationIdentifier = location_id)) |>
-    authorization(token) |>
-    user_agent() |>
-    httr2::req_perform() |>
-    httr2::resp_body_json() |>
+  query <- list(LocationIdentifier = location_id)
+  
+  response <- domain |>
+    request("GetLocationData", token, query = query) |>
     tibblify::tibblify(spec) |>
     identity()
 }

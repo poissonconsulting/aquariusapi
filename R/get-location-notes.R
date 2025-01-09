@@ -27,16 +27,10 @@ aq_get_location_notes <- function(
     LocationNotes = tibblify::tib_variant("LocationNotes")
   )
   
+  query <- list(LocationIdentifier = location_id)
+  
   response <- domain |>
-    aq_url() |>
-    httr2::request() |>
-    httr2::req_method("GET") |>
-    httr2::req_url_path_append("GetLocationNotes") |>
-    httr2::req_url_query(!!!list(LocationIdentifier = location_id)) |>
-    authorization(token) |>
-    user_agent() |>
-    httr2::req_perform() |>
-    httr2::resp_body_json() |>
+    request("GetLocationNotes", token, query = query) |>
     tibblify::tibblify(spec) |>
     identity()
   

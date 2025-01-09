@@ -30,16 +30,10 @@ aq_get_time_series_data_raw <- function(
     Points = tibblify::tib_variant("Points")
   )
   
+  query <- list(TimeSeriesUniqueId = time_series_id)
+  
   response <- domain |>
-    aq_url() |>
-    httr2::request() |>
-    httr2::req_method("GET") |>
-    httr2::req_url_path_append("GetTimeSeriesRawData") |>
-    httr2::req_url_query(!!!list(TimeSeriesUniqueId = time_series_id)) |>
-    authorization(token) |>
-    user_agent() |>
-    httr2::req_perform() |>
-    httr2::resp_body_json() |>
+    request("GetTimeSeriesRawData", token, query = query) |>
     tibblify::tibblify(spec)
   
   points <- response$Points |>

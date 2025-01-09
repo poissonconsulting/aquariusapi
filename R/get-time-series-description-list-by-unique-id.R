@@ -21,16 +21,10 @@ aq_get_time_series_description_list_by_unique_id <- function(
   chk::chk_string(token)
   chk::chk_string(domain)
   
+  query <- list(TimeSeriesUniqueIds = time_series_ids)
+  
   response <- domain |>
-    aq_url() |>
-    httr2::request() |>
-    httr2::req_method("GET") |>
-    httr2::req_url_path_append("GetTimeSeriesDescriptionListByUniqueId") |>
-    httr2::req_url_query(!!!list(TimeSeriesUniqueIds = time_series_ids)) |>
-    authorization(token) |>
-    user_agent() |>
-    httr2::req_perform() |>
-    httr2::resp_body_json() |>
+    request("GetTimeSeriesDescriptionListByUniqueId", token, query = query) |>
     purrr::pluck("TimeSeriesDescriptions") |>
     tibblify::tibblify()
   
