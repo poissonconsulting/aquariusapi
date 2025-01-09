@@ -8,7 +8,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-6745-6796")),
     person("Elk Valley Resources", role = c("fnd", "cph"))
   )
-Description: Provides an interface to the Aquarius API.
+Description: Provides an low-level interface to the Aquarius API.
 License: MIT + file LICENSE
 Depends:
     R (>= 4.3)

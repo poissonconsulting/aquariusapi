@@ -14,8 +14,8 @@ coverage](https://codecov.io/gh/poissonconsulting/aquariusapi/graph/badge.svg)](
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit)
 <!-- badges: end -->
 
-The `aquariusapi` R package provides an interface to the [Aquarius
-API](https://aquarius-webportal.readthedocs.io/en/latest/apidocs.html).
+The `aquariusapi` R package provides an low-level interface to the
+[Aquarius API](https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/).
 
 ## Installation
 
