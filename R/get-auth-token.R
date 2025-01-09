@@ -24,7 +24,7 @@ aq_get_auth_token <- function(
   chk::chk_string(domain)
   
   token <- domain |>
-    base_url() |>
+    aq_url() |>
     httr2::request() |>
     httr2::req_method("POST") |> 
     httr2::req_url_path_append("session") |>

@@ -28,7 +28,7 @@ aq_get_time_series_raw_data <- function(
   )
   
   response <- domain |>
-    base_url() |>
+    aq_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetTimeSeriesRawData") |>

@@ -36,7 +36,7 @@ aq_get_location_data <- function(
   )
   
   domain |>
-    base_url() |>
+    aq_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetLocationData") |>

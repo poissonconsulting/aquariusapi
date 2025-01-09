@@ -17,7 +17,7 @@ aq_get_time_series_unique_id_list <- function(
   chk::chk_string(domain)
   
   domain |>
-    base_url() |>
+    aq_url() |>
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append("GetTimeSeriesUniqueIdList") |>

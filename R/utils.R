@@ -2,10 +2,6 @@ file_path <- function(...) {
   paste(..., sep = "/")
 }
 
-base_url <- function(domain) {
-  file_path("https:/", domain, "AQUARIUS/Publish/v2")
-}
-
 authorization <- function(x, token) {
   httr2::req_headers(x, Authorization = glue::glue("Bearer {token}"))
 }
