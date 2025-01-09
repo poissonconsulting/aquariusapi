@@ -1,4 +1,4 @@
-# aq_get_time_series_data_raw works
+# aq_get_time_series_raw_data works
 
     # A tibble: 88,747 x 9
        UniqueId Parameter Label LocationIdentifier Unit  StartTime EndTime Timestamp

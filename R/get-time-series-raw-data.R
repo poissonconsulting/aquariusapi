@@ -8,9 +8,9 @@
 #'
 #' @examples
 #' \dontrun{
-#'  aq_get_time_series_data_raw("27a6b0badd044e0c9b29d589b9e078d9")
+#'  aq_get_time_series_raw_data("27a6b0badd044e0c9b29d589b9e078d9")
 #' }
-aq_get_time_series_data_raw <- function(
+aq_get_time_series_raw_data <- function(
     time_series_id,
     ...,
     token = aq_token(),
