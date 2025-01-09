@@ -26,20 +26,17 @@ aq_get_location_data <- function(
     request("GetLocationData", token, query = query)
 
   spec <- tibblify::tspec_row(
-    Identifier = tib_chr("Identifier"),
     LocationName = tib_chr("LocationName"),
+    Description = tib_chr("Description"),
+    Identifier = tib_chr("Identifier"),
+    UniqueId = tib_chr("UniqueId"),
     LocationType = tib_chr("LocationType"),
     Latitude = tib_dbl("Latitude"),
     Longitude = tib_dbl("Longitude"),
-    UtcOffset = tib_int("UtcOffset"),
-    Elevation = tib_dbl("Elevation"),
-    ElevationUnits = tib_chr("ElevationUnits"),
-    Description = tib_chr("Description"),
     Srid = tib_int("Srid"),
-    UniqueId = tib_chr("UniqueId"),
-    ExtendedAttributes = tibblify::tib_variant("ExtendedAttributes"),
-    LocationDatum = tibblify::tib_variant("LocationDatum"),
-    Tags = tibblify::tib_variant("Tags")
+    ElevationUnits = tib_chr("ElevationUnits"),
+    Elevation = tib_dbl("Elevation"),
+    UtcOffset = tib_int("UtcOffset")
   )
   
   response <- response |>
