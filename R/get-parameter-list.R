@@ -11,8 +11,10 @@
 #'  aq_get_parameter_list()
 #' }
 aq_get_parameter_list <- function(
+    ...,
     token = aq_token(),
     domain = aq_domain()) {
+  chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
   

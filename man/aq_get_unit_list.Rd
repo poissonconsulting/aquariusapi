@@ -4,9 +4,11 @@
 \alias{aq_get_unit_list}
 \title{Get Unit List}
 \usage{
-aq_get_unit_list(token = aq_token(), domain = aq_domain())
+aq_get_unit_list(..., token = aq_token(), domain = aq_domain())
 }
 \arguments{
+\item{...}{These dots are for future extensions and must be empty.}
+
 \item{token}{A string of the user's authentication token.}
 
 \item{domain}{A string of the domain name.}

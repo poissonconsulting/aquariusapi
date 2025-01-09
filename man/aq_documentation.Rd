@@ -4,10 +4,12 @@
 \alias{aq_documentation}
 \title{Documentation}
 \usage{
-aq_documentation(path_append, domain = aq_domain())
+aq_documentation(path_append, ..., domain = aq_domain())
 }
 \arguments{
 \item{path_append}{A string to append to the URL path.}
+
+\item{...}{These dots are for future extensions and must be empty.}
 
 \item{domain}{A string of the domain name.}
 }

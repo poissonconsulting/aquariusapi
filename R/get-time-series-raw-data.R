@@ -11,11 +11,14 @@
 #'  aq_get_time_series_raw_data("27a6b0badd044e0c9b29d589b9e078d9")
 #' }
 aq_get_time_series_raw_data <- function(
-    time_series_id, 
+    time_series_id,
+    ...,
     token = aq_token(),
     domain = aq_domain()) {
   chk::chk_string(time_series_id)
+  chk::chk_unused(...)
   chk::chk_string(token)
+  chk::chk_string(domain)
   
   spec <- tibblify::tspec_row(
     UniqueId = tib_chr("UniqueId"),

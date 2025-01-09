@@ -12,9 +12,11 @@
 #' }
 aq_get_location_data <- function(
     location_id, 
+    ...,
     token = aq_token(),
     domain = aq_domain()) {
   chk::chk_string(location_id)
+  chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
   

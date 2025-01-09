@@ -4,10 +4,17 @@
 \alias{aq_get_location_data}
 \title{Get Location Data}
 \usage{
-aq_get_location_data(location_id, token = aq_token(), domain = aq_domain())
+aq_get_location_data(
+  location_id,
+  ...,
+  token = aq_token(),
+  domain = aq_domain()
+)
 }
 \arguments{
 \item{location_id}{A string of the location identifier}
+
+\item{...}{These dots are for future extensions and must be empty.}
 
 \item{token}{A string of the user's authentication token.}
 

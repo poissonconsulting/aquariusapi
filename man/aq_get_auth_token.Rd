@@ -8,6 +8,7 @@
 aq_get_auth_token(
   username = getOption("aq.username", Sys.getenv("AQ_USERNAME")),
   password = getOption("aq.password", Sys.getenv("AQ_PASSWORD")),
+  ...,
   domain = aq_domain()
 )
 
@@ -20,6 +21,8 @@ aq_token(
 \item{username}{A string of the user name.}
 
 \item{password}{A string of the user's password.}
+
+\item{...}{These dots are for future extensions and must be empty.}
 
 \item{domain}{A string of the domain name.}
 }

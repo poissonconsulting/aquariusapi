@@ -17,10 +17,12 @@
 aq_get_auth_token <- function(
     username = getOption("aq.username", Sys.getenv("AQ_USERNAME")), 
     password = getOption("aq.password", Sys.getenv("AQ_PASSWORD")),
+    ...,
     domain = aq_domain()) {
   
   chk::chk_string(username)
   chk::chk_string(password)
+  chk::chk_unused(...)
   chk::chk_string(domain)
   
   token <- domain |>
