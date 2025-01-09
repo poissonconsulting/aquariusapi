@@ -9,6 +9,8 @@
 \arguments{
 \item{...}{These dots are for future extensions and must be empty.}
 
+\item{domain}{A string of the domain name.}
+
 \item{token}{A string of the user's authentication token.}
 
 \item{location}{A string of the location name.}
