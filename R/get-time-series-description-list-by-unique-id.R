@@ -15,6 +15,7 @@ aq_get_time_series_description_list_by_unique_id <- function(
     ...,
     token = aq_token(),
     domain = aq_domain()) {
+
   chk::chk_character(time_series_ids)
   chk::chk_vector(time_series_ids)
   chk::chk_unused(...)

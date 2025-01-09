@@ -19,6 +19,7 @@ aq_get_auth_token <- function(
     password = getOption("aq.password", Sys.getenv("AQ_PASSWORD")),
     ...,
     domain = aq_domain()) {
+
   chk::chk_string(username)
   chk::chk_string(password)
   chk::chk_unused(...)

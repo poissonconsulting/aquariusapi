@@ -15,6 +15,7 @@ aq_get_location_notes <- function(
     ...,
     token = aq_token(),
     domain = aq_domain()) {
+
   chk::chk_string(location_id)
   chk::chk_unused(...)
   chk::chk_string(token)

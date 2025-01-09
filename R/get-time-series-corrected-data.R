@@ -15,6 +15,7 @@ aq_get_time_series_corrected_data <- function(
     ...,
     token = aq_token(),
     domain = aq_domain()) {
+
   chk::chk_string(time_series_id)
   chk::chk_unused(...)
   chk::chk_string(token)
