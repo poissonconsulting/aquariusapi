@@ -1,6 +1,5 @@
 test_that("aq_get_time_series_description_list_by_unique_id works", {
-  data <- aq_get_time_series_description_list_by_unique_id("27a6b0badd044e0c9b29d589b9e078d9")
-  expect_snapshot(data)
+  expect_snapshot(aq_get_time_series_description_list_by_unique_id("27a6b0badd044e0c9b29d589b9e078d9"))
 })
 
 # test_that("aq_get_time_series_description_list_by_unique_id works vector", {

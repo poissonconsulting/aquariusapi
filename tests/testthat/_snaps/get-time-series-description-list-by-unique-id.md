@@ -1,7 +1,12 @@
 # aq_get_time_series_description_list_by_unique_id works
 
     Code
-      data
+      aq_get_time_series_description_list_by_unique_id(
+        "27a6b0badd044e0c9b29d589b9e078d9")
+    Message
+      The spec contains 2 unspecified fields:
+      * ExtendedAttributes
+      * Thresholds
     Output
       # A tibble: 1 x 23
         Identifier   UniqueId LocationIdentifier Parameter ParameterId Unit  UtcOffset

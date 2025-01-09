@@ -39,8 +39,7 @@ aq_get_location_data <- function(
   
   query <- list(LocationIdentifier = location_id)
   
-  response <- domain |>
+  domain |>
     request("GetLocationData", token, query = query) |>
-    tibblify::tibblify(spec) |>
-    identity()
+    tibblify::tibblify(spec)
 }
