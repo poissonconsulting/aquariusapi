@@ -1,4 +1,4 @@
-# aq_get_time_series_data_corrected works
+# aq_get_time_series_corrected_data works
 
     # A tibble: 55,449 x 9
        UniqueId Parameter Label LocationIdentifier Unit  StartTime EndTime Timestamp
