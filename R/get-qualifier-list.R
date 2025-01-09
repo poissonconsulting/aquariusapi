@@ -21,9 +21,15 @@ aq_get_qualifier_list <- function(
   response <- domain |>
     request("GetQualifierList", token) 
   
+  spec <- tibblify::tspec_df(
+    tib_chr("Identifier"),
+    tib_chr("Code"),
+    tib_chr("DisplayName")
+  )
+  
   response <- response |>
     purrr::pluck("Qualifiers") |>
-    tibblify::tibblify()
+    tibblify::tibblify(spec)
 
   response
 }
