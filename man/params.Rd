@@ -20,6 +20,8 @@
 \item{time_series_id}{A string of time series ID.}
 
 \item{username}{A string of the user name.}
+
+\item{path_append}{A string to append to the URL path.}
 }
 \value{
 A tibble.

@@ -3,7 +3,7 @@
 #' Generates an temporary authorization token from the Aquarius API for a supplied
 #' username and password.
 #' 
-#' \url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetAuthTokenServiceRequest}
+#' \url{`r aq_documentation("GetAuthTokenServiceRequest")`}
 #' 
 #' @inheritParams params
 #'
