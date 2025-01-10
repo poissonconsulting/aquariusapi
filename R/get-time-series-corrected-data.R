@@ -24,36 +24,11 @@ aq_get_time_series_corrected_data <- function(
   chk::chk_string(token)
   chk::chk_string(domain)
   
-  query <- list(
-    TimeSeriesUniqueId = time_series_id, 
-    QueryFrom = query_from,
-    QueryTo = query_to,
-    GetParts = "PointsOnly")
-  
-  response <- domain |>
-    request("GetTimeSeriesCorrectedData", token, query = query)
-  
-  spec <- tibblify::tspec_row(
-    tib_int("NumPoints"),
-    tib_variant("Points", required = FALSE))
-  
-  response <- response |>
-    tibblify::tibblify(spec)
-  
-  if(!response$NumPoints) {
-    return(dplyr::tibble(Timestamp = character(), Value = double()))
-  }
-  
-  spec_points <- tibblify::tspec_df(
-    tib_chr("Timestamp"),
-    tib_variant("Value", transform = \(x) unname(unlist(x)), required = FALSE)
-  )
-  
-  response <- response |>
-    purrr::pluck("Points") |>
-    purrr::pluck(1) |>
-    tibblify::tibblify(spec_points) |>
-    identity()
-  
-  response
+  get_time_series_data(
+    time_series_id = time_series_id,
+    query_from = query_from,
+    query_to = query_to,
+    path_append = "GetTimeSeriesCorrectedData",
+    token = token,
+    domain = domain)
 }

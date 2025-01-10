@@ -34,7 +34,7 @@ get_time_series_data <- function(
     GetParts = "PointsOnly")
   
   response <- domain |>
-    request(path_append, token, query = query)
+    request(path_append = path_append, token, query = query)
   
   spec <- tibblify::tspec_row(
     tib_int("NumPoints"),
