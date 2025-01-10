@@ -6,6 +6,8 @@
 \usage{
 aq_get_time_series_raw_data(
   time_series_id,
+  query_from = NULL,
+  query_to = NULL,
   ...,
   token = aq_token(),
   domain = aq_domain()
@@ -13,6 +15,10 @@ aq_get_time_series_raw_data(
 }
 \arguments{
 \item{time_series_id}{A string of time series ID.}
+
+\item{query_from}{A date of the start of the period of interest.}
+
+\item{query_to}{A date of the end of the period of interest.}
 
 \item{...}{These dots are for future extensions and must be empty.}
 

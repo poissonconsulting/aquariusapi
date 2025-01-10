@@ -15,7 +15,7 @@
     10 2022-01-15T02:30:00.0000000-07:00 0.179
     # i 55,439 more rows
 
----
+# aq_get_time_series_corrected_data query_from
 
     # A tibble: 2,977 x 2
        Timestamp                         Value
@@ -31,4 +31,9 @@
      9 2022-01-16T19:00:00.0000000-07:00 0.177
     10 2022-01-16T19:15:00.0000000-07:00 0.177
     # i 2,967 more rows
+
+# aq_get_time_series_corrected_data query_from out
+
+    # A tibble: 0 x 2
+    # i 2 variables: Timestamp <chr>, Value <dbl>
 

@@ -12,44 +12,48 @@
 #' }
 aq_get_time_series_raw_data <- function(
     time_series_id,
+    query_from = NULL,
+    query_to = NULL,
     ...,
     token = aq_token(),
     domain = aq_domain()) {
   chk::chk_string(time_series_id)
+  chk::chk_null_or(query_from, vld = chk::chk_date)
+  chk::chk_null_or(query_to, vld = chk::chk_date)
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
-
-  query <- list(TimeSeriesUniqueId = time_series_id)
-
+  
+  query <- list(
+    TimeSeriesUniqueId = time_series_id, 
+    QueryFrom = query_from,
+    QueryTo = query_to,
+    GetParts = "PointsOnly")
+  
   response <- domain |>
     request("GetTimeSeriesRawData", token, query = query) 
   
   spec <- tibblify::tspec_row(
-    UniqueId = tib_chr("UniqueId"),
-    Parameter = tib_chr("Parameter"),
-    Label = tib_chr("Label"),
-    LocationIdentifier = tib_chr("LocationIdentifier"),
-    Unit = tib_chr("Unit"),
-    TimeRange = tibblify::tib_variant("TimeRange"),
-    Points = tibblify::tib_variant("Points")
-  )
+    tib_int("NumPoints"),
+    tib_variant("Points", required = FALSE))
   
   response <- response |>
     tibblify::tibblify(spec)
+  
+  if(!response$NumPoints) {
+    return(dplyr::tibble(Timestamp = character(), Value = double()))
+  }
 
-  points <- response$Points |>
-    purrr::pluck(1) |>
-    tibblify::tibblify()
-
-  time_range <- response$TimeRange |>
-    tibblify::tibblify()
-
-  response <- response |>
-    dplyr::select(!c("Points", "TimeRange")) |>
-    dplyr::bind_cols(time_range) |>
-    dplyr::cross_join(points) |>
-    identity()
-
+  spec_points <- tibblify::tspec_df(
+    tib_chr("Timestamp", require),
+    tib_variant("Value", transform = \(x) unname(unlist(x)), required = FALSE)
+  )
+  
+ #  response <- response |>
+ #    purrr::pluck("Points") |>
+ #    tibblify::tibblify(spec_points) |>
+ # #   dplyr::mutate(Value = unname(unlist(Value))) |>
+ #    identity()
+  # 
   response
 }

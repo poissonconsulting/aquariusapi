@@ -1,18 +1,39 @@
 # aq_get_time_series_raw_data works
 
-    # A tibble: 88,747 x 9
-       UniqueId Parameter Label LocationIdentifier Unit  StartTime EndTime Timestamp
-       <chr>    <chr>     <chr> <chr>              <chr> <chr>     <chr>   <chr>    
-     1 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     2 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     3 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     4 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     5 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     6 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     7 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     8 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-     9 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
-    10 27a6b0b~ Stage     Flow~ CM_CCOFF           m     2021-10-~ 2024-0~ 2021-10-~
+    # A tibble: 88,747 x 2
+       Timestamp                         Value
+       <chr>                             <dbl>
+     1 2021-10-05T12:45:00.0000000-07:00    NA
+     2 2021-10-05T13:00:00.0000000-07:00    NA
+     3 2021-10-05T13:15:00.0000000-07:00    NA
+     4 2021-10-05T13:30:00.0000000-07:00    NA
+     5 2021-10-05T13:45:00.0000000-07:00    NA
+     6 2021-10-05T14:00:00.0000000-07:00    NA
+     7 2021-10-05T14:15:00.0000000-07:00    NA
+     8 2021-10-05T14:30:00.0000000-07:00    NA
+     9 2021-10-05T14:45:00.0000000-07:00    NA
+    10 2021-10-05T15:00:00.0000000-07:00    NA
     # i 88,737 more rows
-    # i 1 more variable: Value <tibble[,1]>
+
+# aq_get_time_series_raw_data query_from
+
+    # A tibble: 2,977 x 2
+       Timestamp                         Value
+       <chr>                             <dbl>
+     1 2022-01-16T17:00:00.0000000-07:00 0.177
+     2 2022-01-16T17:15:00.0000000-07:00 0.177
+     3 2022-01-16T17:30:00.0000000-07:00 0.177
+     4 2022-01-16T17:45:00.0000000-07:00 0.177
+     5 2022-01-16T18:00:00.0000000-07:00 0.177
+     6 2022-01-16T18:15:00.0000000-07:00 0.177
+     7 2022-01-16T18:30:00.0000000-07:00 0.177
+     8 2022-01-16T18:45:00.0000000-07:00 0.177
+     9 2022-01-16T19:00:00.0000000-07:00 0.177
+    10 2022-01-16T19:15:00.0000000-07:00 0.177
+    # i 2,967 more rows
+
+# aq_get_time_series_corrected_data query_from out
+
+    # A tibble: 0 x 2
+    # i 1 variable: Timestamp <chr>
 

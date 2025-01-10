@@ -31,16 +31,29 @@ aq_get_time_series_corrected_data <- function(
     GetParts = "PointsOnly")
   
   response <- domain |>
-    request("GetTimeSeriesCorrectedData", token, query = query) 
+    request("GetTimeSeriesCorrectedData", token, query = query)
+  
+  spec <- tibblify::tspec_row(
+    tib_int("NumPoints"),
+    tib_variant("Points", required = FALSE))
+  
+  response <- response |>
+    tibblify::tibblify(spec)
+  
+  if(!response$NumPoints) {
+    return(dplyr::tibble(Timestamp = character(), Value = double()))
+  }
   
   spec_points <- tibblify::tspec_df(
     tib_chr("Timestamp"),
-    tib_variant("Value", transform = \(x) unname(unlist(x)))
+    tib_variant("Value", transform = \(x) unname(unlist(x)), required = FALSE)
   )
   
   response <- response |>
     purrr::pluck("Points") |>
-    tibblify::tibblify(spec_points)
+    purrr::pluck(1) |>
+    tibblify::tibblify(spec_points) |>
+    identity()
   
   response
 }
