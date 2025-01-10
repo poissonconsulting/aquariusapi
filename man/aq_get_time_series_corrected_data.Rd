@@ -7,6 +7,8 @@
 aq_get_time_series_corrected_data(
   time_series_id,
   ...,
+  return_full_coverage = FALSE,
+  include_gap_markers = FALSE,
   token = aq_token(),
   domain = aq_domain()
 )
@@ -15,6 +17,8 @@ aq_get_time_series_corrected_data(
 \item{time_series_id}{A string of time series ID.}
 
 \item{...}{These dots are for future extensions and must be empty.}
+
+\item{include_gap_markers}{A flag specifying whether to include gap markers.}
 
 \item{token}{A string of the user's authentication token.}
 

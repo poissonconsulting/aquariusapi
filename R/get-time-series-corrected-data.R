@@ -13,14 +13,21 @@
 aq_get_time_series_corrected_data <- function(
     time_series_id,
     ...,
+    return_full_coverage = FALSE,
+    include_gap_markers = FALSE,
     token = aq_token(),
     domain = aq_domain()) {
   chk::chk_string(time_series_id)
   chk::chk_unused(...)
+  chk::chk_flag(include_gap_markers)
+  chk::chk_flag(return_full_coverage)
   chk::chk_string(token)
   chk::chk_string(domain)
   
-  query <- list(TimeSeriesUniqueId = time_series_id)
+  query <- list(
+    TimeSeriesUniqueId = time_series_id, 
+    ReturnFullCoverage = return_full_coverage,
+    IncludeGapMarkers = include_gap_markers)
   
   response <- domain |>
     request("GetTimeSeriesCorrectedData", token, query = query) 

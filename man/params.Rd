@@ -13,6 +13,8 @@
 
 \item{token}{A string of the user's authentication token.}
 
+\item{include_gap_markers}{A flag specifying whether to include gap markers.}
+
 \item{location_id}{A string of the location identifier}
 
 \item{password}{A string of the user's password.}
