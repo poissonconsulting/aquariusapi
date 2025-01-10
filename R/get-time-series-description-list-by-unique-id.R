@@ -26,8 +26,21 @@ aq_get_time_series_description_list_by_unique_id <- function(
   response <- domain |>
     request("GetTimeSeriesDescriptionListByUniqueId", token, query = query)
   
+  spec <- tibblify::tspec_row(
+    tib_variant("TimeSeriesDescriptions")
+  )
+  
+  response <- response |>
+    tibblify::tibblify(spec)
+
+  time_series_descriptions_spec <- tibblify::tspec_df(
+     tib_chr("Identifier")
+  )
+  
   response <- response |>
     purrr::pluck("TimeSeriesDescriptions") |>
+    purrr::pluck(1) |>
+#    tibblify::tibblify(time_series_descriptions_spec) |>
     tibblify::tibblify() |>
     identity()
 
