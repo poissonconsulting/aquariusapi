@@ -11,16 +11,16 @@
 #' aq_get_location_data("LC_DRY_WQ06_TEMP")
 #' }
 aq_get_location_data <- function(
-    location_id,
+    location_identifier,
     ...,
     token = aq_token(),
     domain = aq_domain()) {
-  chk::chk_string(location_id)
+  chk::chk_string(location_identifier)
   chk::chk_unused(...)
   chk::chk_string(token)
   chk::chk_string(domain)
   
-  query <- list(LocationIdentifier = location_id)
+  query <- list(LocationIdentifier = location_identifier)
   
   response <- domain |>
     request("GetLocationData", token, query = query)

@@ -11,21 +11,25 @@
 
 \item{domain}{A string of the domain name.}
 
-\item{token}{A string of the user's authentication token.}
+\item{location_identifier}{A string of the location identifier.}
 
-\item{include_gap_markers}{A flag specifying whether to include gap markers.}
-
-\item{location_id}{A string of the location identifier}
+\item{parameter}{A string of the parameter.}
 
 \item{password}{A string of the user's password.}
+
+\item{path_append}{A string to append to the URL path.}
 
 \item{time_series_id}{A string of time series ID.}
 
 \item{time_series_ids}{A character vector of the time series ID.}
 
-\item{username}{A string of the user name.}
+\item{token}{A string of the user's authentication token.}
 
-\item{path_append}{A string to append to the URL path.}
+\item{query_from}{A date of the start of the period of interest.}
+
+\item{query_to}{A date of the end of the period of interest.}
+
+\item{username}{A string of the user name.}
 }
 \value{
 A tibble.
@@ -38,5 +42,7 @@ functions.
 A flag is a non-missing logical scalar.
 
 A string is a non-missing character scalar.
+
+A date is a non-missing character scalar.
 }
 \keyword{internal}

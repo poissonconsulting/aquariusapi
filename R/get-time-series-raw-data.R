@@ -1,4 +1,4 @@
-#' Get Location Data
+#' Get Time Series Raw Data
 #'
 #' @seealso \url{`r aq_documentation("TimeSeriesDataRawServiceRequest")`}
 #'

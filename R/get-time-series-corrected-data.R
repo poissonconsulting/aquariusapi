@@ -1,4 +1,4 @@
-#' Get Location Data
+#' Get Time Series Corrected Data
 #'
 #' @seealso \url{`r aq_documentation("TimeSeriesDataCorrectedServiceRequest")`}
 #'
@@ -12,62 +12,35 @@
 #' }
 aq_get_time_series_corrected_data <- function(
     time_series_id,
+    query_from = NULL,
+    query_to = NULL,
     ...,
-    return_full_coverage = FALSE,
-    include_gap_markers = FALSE,
     token = aq_token(),
     domain = aq_domain()) {
   chk::chk_string(time_series_id)
+  chk::chk_null_or(query_from, vld = chk::chk_date)
+  chk::chk_null_or(query_to, vld = chk::chk_date)
   chk::chk_unused(...)
-  chk::chk_flag(include_gap_markers)
-  chk::chk_flag(return_full_coverage)
   chk::chk_string(token)
   chk::chk_string(domain)
   
   query <- list(
     TimeSeriesUniqueId = time_series_id, 
-    ReturnFullCoverage = return_full_coverage,
-    IncludeGapMarkers = include_gap_markers)
+    QueryFrom = query_from,
+    QueryTo = query_to,
+    GetParts = "PointsOnly")
   
   response <- domain |>
     request("GetTimeSeriesCorrectedData", token, query = query) 
-  
-  spec <- tibblify::tspec_row(
-    tib_chr("UniqueId"),
-    tib_chr("Parameter"),
-    tib_chr("Label"),
-    tib_chr("LocationIdentifier"),
-    tib_int("NumPoints"),
-    tib_chr("Unit"),
-    tibblify::tib_variant("TimeRange"),
-    tibblify::tib_variant("Points")
-  )
-  
-  response <- response |>
-    tibblify::tibblify(spec)
   
   spec_points <- tibblify::tspec_df(
     tib_chr("Timestamp"),
     tib_variant("Value", transform = \(x) unname(unlist(x)))
   )
   
-  spec_time_range <- tibblify::tspec_df(
-    tib_chr("StartTime"),
-    tib_chr("EndTime")
-  )
-  
-  points <- response$Points |>
-    purrr::pluck(1) |>
-    tibblify::tibblify(spec_points)
-  
-  time_range <- response$TimeRange |>
-    tibblify::tibblify()
-  
   response <- response |>
-    dplyr::select(!c("Points", "TimeRange")) |>
-    dplyr::bind_cols(time_range) |>
-    dplyr::cross_join(points) |>
-    identity()
+    purrr::pluck("Points") |>
+    tibblify::tibblify(spec_points)
   
   response
 }

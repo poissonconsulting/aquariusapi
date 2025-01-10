@@ -5,14 +5,14 @@
 \title{Get Location Notes}
 \usage{
 aq_get_location_notes(
-  location_id,
+  location_identifier,
   ...,
   token = aq_token(),
   domain = aq_domain()
 )
 }
 \arguments{
-\item{location_id}{A string of the location identifier}
+\item{location_identifier}{A string of the location identifier.}
 
 \item{...}{These dots are for future extensions and must be empty.}
 

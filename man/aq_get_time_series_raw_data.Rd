@@ -2,7 +2,7 @@
 % Please edit documentation in R/get-time-series-raw-data.R
 \name{aq_get_time_series_raw_data}
 \alias{aq_get_time_series_raw_data}
-\title{Get Location Data}
+\title{Get Time Series Raw Data}
 \usage{
 aq_get_time_series_raw_data(
   time_series_id,
@@ -21,7 +21,7 @@ aq_get_time_series_raw_data(
 \item{domain}{A string of the domain name.}
 }
 \description{
-Get Location Data
+Get Time Series Raw Data
 }
 \examples{
 \dontrun{
