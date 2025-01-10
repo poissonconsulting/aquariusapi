@@ -25,8 +25,8 @@ aq_get_parameter_list <- function(
     tib_chr("Identifier"),
     tib_chr("UnitGroupIdentifier"),
     tib_chr("UnitIdentifier"),
-    tib_chr("DisplayName"),
-    tib_chr("InterpolationType"),
+    tib_chr("DisplayName", required = FALSE),
+    tib_chr("InterpolationType", required = FALSE),
     tib_chr("RoundingSpec", required = FALSE),
   )
   
