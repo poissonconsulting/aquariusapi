@@ -29,5 +29,5 @@ aq_get_location_notes("LC_DRY_WQ06_TEMP")
 }
 }
 \seealso{
-\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=GetLocationNotes}
+\url{https://evr.aquaticinformatics.net/AQUARIUS/Publish/v2/json/metadata?op=LocationNotesServiceRequest}
 }

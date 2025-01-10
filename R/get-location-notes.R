@@ -1,6 +1,6 @@
 #' Get Location Notes
 #'
-#' @seealso \url{`r aq_documentation("GetLocationNotes")`}
+#' @seealso \url{`r aq_documentation("LocationNotesServiceRequest")`}
 #'
 #' @inheritParams params
 #'
@@ -28,11 +28,32 @@ aq_get_location_notes <- function(
   spec <- tibblify::tspec_row(
     tib_chr("LocationName"),
     tib_chr("LocationIdentifier"),
-    tib_chr("LocationUniqueId")
+    tib_chr("LocationUniqueId"),
+    tib_variant("LocationNotes")
+  )
+
+  response <- response |>
+    tibblify::tibblify(spec)
+  
+  spec_location_notes <- tibblify::tspec_df(
+    tib_chr("UniqueID", required = FALSE),
+    tib_chr("CreateTimeUtc", required = FALSE),
+    tib_chr("LastModifiedUtc", required = FALSE),
+    tib_chr("FromTimeUtc", required = FALSE),
+    tib_chr("ToTimeUtc", required = FALSE),
+    tib_chr("Details", required = FALSE),
+    tib_chr("TimeSeriesUniqueId", required = FALSE),
+    tib_chr("LastModifiedByUser", required = FALSE),
+    tib_chr("CreatedByUser", required = FALSE)
   )
   
+  location_notes <- response$LocationNotes |>
+    tibblify::tibblify(spec_location_notes)
+  
   response <- response |>
-    tibblify::tibblify(spec) 
-
+    dplyr::select(!"LocationNotes") |>
+    dplyr::cross_join(location_notes) |>
+    identity()
+  
   response
 }
