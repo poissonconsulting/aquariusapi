@@ -25,7 +25,7 @@ Get Location Data
 }
 \examples{
 \dontrun{
-aq_get_time_series_corrected("27a6b0badd044e0c9b29d589b9e078d9")
+aq_get_time_series_corrected_data("27a6b0badd044e0c9b29d589b9e078d9")
 }
 }
 \seealso{

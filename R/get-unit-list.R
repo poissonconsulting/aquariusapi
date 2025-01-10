@@ -21,9 +21,19 @@ aq_get_unit_list <- function(
   response <- domain |>
     request("GetUnitList", token)
   
+  spec_units <- tibblify::tspec_df(
+    tib_chr("UniqueId"),
+    tib_chr("Identifier"),
+    tib_chr("GroupIdentifier"),
+    tib_chr("Symbol"),
+    tib_chr("DisplayName"),
+    tib_chr("BaseMultiplier"),
+    tib_chr("BaseOffset"),
+  )
+  
   response <- response |>
     purrr::pluck("Units") |>
-    tibblify::tibblify() |>
+    tibblify::tibblify(spec_units) |>
     identity()
   
   response
