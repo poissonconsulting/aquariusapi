@@ -5,12 +5,18 @@
 \title{Get Time Series Description List}
 \usage{
 aq_get_time_series_description_list(
+  location_identifier = NULL,
+  parameter = NULL,
   ...,
   token = aq_token(),
   domain = aq_domain()
 )
 }
 \arguments{
+\item{location_identifier}{A string of the location identifier.}
+
+\item{parameter}{A string of the parameter.}
+
 \item{...}{These dots are for future extensions and must be empty.}
 
 \item{token}{A string of the user's authentication token.}
@@ -23,6 +29,7 @@ Get Time Series Description List
 \examples{
 \dontrun{
 aq_get_time_series_description_list()
+aq_get_time_series_description_list("LC_DRY_WQ06_TEMP")
 }
 }
 \seealso{
