@@ -49,7 +49,7 @@ get_time_series_data <- function(
   
   spec_points <- tibblify::tspec_df(
     tib_chr("Timestamp"),
-    tib_variant("Value", transform = \(x) unname(unlist(x)), required = FALSE)
+    tib_variant("Value", transform = as.numeric, required = FALSE)
   )
   
   response <- response |>
