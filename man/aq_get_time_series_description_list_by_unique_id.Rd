@@ -5,14 +5,14 @@
 \title{Get Time Series Description}
 \usage{
 aq_get_time_series_description_list_by_unique_id(
-  time_series_ids,
+  time_series_unique_ids,
   ...,
   token = aq_token(),
   domain = aq_domain()
 )
 }
 \arguments{
-\item{time_series_ids}{A character vector of the time series ID.}
+\item{time_series_unique_ids}{A character vector of the time series ID.}
 
 \item{...}{These dots are for future extensions and must be empty.}
 

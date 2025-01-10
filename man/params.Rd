@@ -19,9 +19,9 @@
 
 \item{path_append}{A string to append to the URL path.}
 
-\item{time_series_id}{A string of time series ID.}
+\item{time_series_unique_id}{A string of time series ID.}
 
-\item{time_series_ids}{A character vector of the time series ID.}
+\item{time_series_unique_ids}{A character vector of the time series ID.}
 
 \item{token}{A string of the user's authentication token.}
 

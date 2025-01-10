@@ -20,7 +20,7 @@ request <- function(domain, path_append, token, query = NULL) {
 }
 
 get_time_series_data <- function(
-    time_series_id,
+    time_series_unique_id,
     query_from,
     query_to,
     path_append,
@@ -28,7 +28,7 @@ get_time_series_data <- function(
     domain) {
 
   query <- list(
-    TimeSeriesUniqueId = time_series_id, 
+    TimeSeriesUniqueId = time_series_unique_id, 
     QueryFrom = query_from,
     QueryTo = query_to,
     GetParts = "PointsOnly")

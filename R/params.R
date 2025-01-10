@@ -15,8 +15,8 @@
 #' @param parameter A string of the parameter.
 #' @param password A string of the user's password.
 #' @param path_append A string to append to the URL path.
-#' @param time_series_id A string of time series ID.
-#' @param time_series_ids A character vector of the time series ID.
+#' @param time_series_unique_id A string of time series ID.
+#' @param time_series_unique_ids A character vector of the time series ID.
 #' @param token A string of the user's authentication token.
 #' @param query_from A date of the start of the period of interest.
 #' @param query_to A date of the end of the period of interest.

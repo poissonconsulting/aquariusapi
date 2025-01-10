@@ -5,7 +5,7 @@
 \title{Get Time Series Corrected Data}
 \usage{
 aq_get_time_series_corrected_data(
-  time_series_id,
+  time_series_unique_id,
   query_from = NULL,
   query_to = NULL,
   ...,
@@ -14,7 +14,7 @@ aq_get_time_series_corrected_data(
 )
 }
 \arguments{
-\item{time_series_id}{A string of time series ID.}
+\item{time_series_unique_id}{A string of time series ID.}
 
 \item{query_from}{A date of the start of the period of interest.}
 
