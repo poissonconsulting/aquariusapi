@@ -41,6 +41,8 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">aq_get_time_series_corrected_data</span><span class="op">(</span></span>
 <span>  <span class="va">time_series_id</span>,</span>
 <span>  <span class="va">...</span>,</span>
+<span>  return_full_coverage <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  include_gap_markers <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  token <span class="op">=</span> <span class="fu"><a href="aq_get_auth_token.html">aq_token</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  domain <span class="op">=</span> <span class="fu"><a href="aq_domain.html">aq_domain</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -56,6 +58,10 @@
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>These dots are for future extensions and must be empty.</p></dd>
+
+
+<dt id="arg-include-gap-markers">include_gap_markers<a class="anchor" aria-label="anchor" href="#arg-include-gap-markers"></a></dt>
+<dd><p>A flag specifying whether to include gap markers.</p></dd>
 
 
 <dt id="arg-token">token<a class="anchor" aria-label="anchor" href="#arg-token"></a></dt>
@@ -74,7 +80,7 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="fu">aq_get_time_series_corrected</span><span class="op">(</span><span class="st">"27a6b0badd044e0c9b29d589b9e078d9"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">aq_get_time_series_corrected_data</span><span class="op">(</span><span class="st">"27a6b0badd044e0c9b29d589b9e078d9"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
