@@ -12,7 +12,7 @@ request <- function(domain, path_append, token, query = NULL) {
     httr2::request() |>
     httr2::req_method("GET") |>
     httr2::req_url_path_append(path_append) |>
-    httr2::req_url_query(!!!query) |>
+    httr2::req_url_query(!!!query, .multi = "comma") |>
     authorization(token) |>
     user_agent() |>
     httr2::req_perform() |>
